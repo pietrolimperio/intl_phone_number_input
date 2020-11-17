@@ -11,6 +11,7 @@ import 'package:intl_phone_number_input/src/utils/util.dart';
 import 'package:intl_phone_number_input/src/utils/widget_view.dart';
 import 'package:intl_phone_number_input/src/widgets/selector_button.dart';
 import 'package:libphonenumber/libphonenumber.dart';
+import 'package:taker/widgets/custom_surfix_icon.dart';
 
 /// Enum for [SelectorButton] types.
 ///
@@ -69,7 +70,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
   final InputBorder inputBorder;
   final InputDecoration inputDecoration;
   final InputDecoration searchBoxDecoration;
-
+  final CustomSuffixIcon suffixIcon;
   final FocusNode focusNode;
 
   final List<String> countries;
@@ -78,6 +79,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       {Key key,
       this.selectorConfig = const SelectorConfig(),
       @required this.onInputChanged,
+        this.suffixIcon,
       this.onInputValidated,
       this.onSubmit,
       this.onFieldSubmitted,
@@ -107,9 +109,14 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       this.countries})
       : super(key: key);
 
+  SelectorButton selectorButton;
+
   @override
   State<StatefulWidget> createState() => _InputWidgetState();
 }
+
+
+
 
 class _InputWidgetState extends State<InternationalPhoneNumberInput> {
   TextEditingController controller;
@@ -256,10 +263,13 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
   InputDecoration getInputDecoration(InputDecoration decoration) {
     return decoration ??
         InputDecoration(
-          border: widget.inputBorder ?? UnderlineInputBorder(),
+          labelText: "Phone Number",
           hintText: widget.hintText,
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          suffixIcon: widget.suffixIcon,
         );
   }
+
 
   /// Validate the phone number when a change occurs
   void onChanged(String value) {
@@ -335,7 +345,6 @@ class _InputWidgetView
               ),
             ],
           ),
-          SizedBox(width: 12),
           Flexible(
             child: TextFormField(
               key: Key(TestHelper.TextInputKeyValue),
