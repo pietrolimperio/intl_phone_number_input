@@ -11,13 +11,17 @@ class CountrySearchListWidget extends StatefulWidget {
   final bool autoFocus;
   final bool showFlags;
   final bool useEmoji;
+  final String label;
 
   CountrySearchListWidget(this.countries, this.locale,
       {this.searchBoxDecoration,
       this.scrollController,
       this.showFlags,
       this.useEmoji,
-      this.autoFocus = false});
+        this.label = "Search by country name or dial code",
+      this.autoFocus = false
+
+      });
 
   @override
   _CountrySearchListWidgetState createState() =>
@@ -42,7 +46,7 @@ class _CountrySearchListWidgetState extends State<CountrySearchListWidget> {
 
   InputDecoration getSearchBoxDecoration() {
     return widget.searchBoxDecoration ??
-        InputDecoration(labelText: 'Search by country name or dial code');
+        InputDecoration(labelText: label);
   }
 
   List<Country> filterCountries() {
