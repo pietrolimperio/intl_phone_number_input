@@ -327,7 +327,7 @@ class _InputWidgetView
           Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-                child: SelectorButton(
+                SelectorButton(
                   country: state.country,
                   countries: state.countries,
                   onCountryChanged: state.onCountryChanged,
@@ -338,7 +338,7 @@ class _InputWidgetView
                   isEnabled: widget.isEnabled,
                   autoFocusSearchField: widget.autoFocusSearch,
                   isScrollControlled: widget.countrySelectorScrollControlled,
-                
+
               ),
 
               SizedBox(
