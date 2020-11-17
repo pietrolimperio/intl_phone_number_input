@@ -117,11 +117,10 @@ class SelectorButton extends StatelessWidget {
       builder: (BuildContext context) => AlertDialog(
         content: Container(
           width: double.maxFinite,
-          child: CountrySearchListWidget(
-            label,
-            countries,
+          child: CountrySearchListWidget(countries,
             locale,
             searchBoxDecoration: searchBoxDecoration,
+            label: label,
             showFlags: selectorConfig.showFlags,
             useEmoji: selectorConfig.useEmoji,
             autoFocus: autoFocusSearchField,
