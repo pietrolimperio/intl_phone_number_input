@@ -339,7 +339,7 @@ class _InputWidgetView
                   isEnabled: widget.isEnabled,
                   autoFocusSearchField: widget.autoFocusSearch,
                   isScrollControlled: widget.countrySelectorScrollControlled,
-                  label : labelForBottomSheet,
+                  label : widget.labelForBottomSheet,
               ),
 
               SizedBox(
