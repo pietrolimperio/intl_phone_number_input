@@ -16,6 +16,7 @@ class SelectorButton extends StatelessWidget {
   final String locale;
   final bool isEnabled;
   final bool isScrollControlled;
+  final String label;
 
   final ValueChanged<Country> onCountryChanged;
 
@@ -31,6 +32,7 @@ class SelectorButton extends StatelessWidget {
     @required this.onCountryChanged,
     @required this.isEnabled,
     @required this.isScrollControlled,
+    this.label
   }) : super(key: key);
 
   @override
@@ -116,6 +118,7 @@ class SelectorButton extends StatelessWidget {
         content: Container(
           width: double.maxFinite,
           child: CountrySearchListWidget(
+            label,
             countries,
             locale,
             searchBoxDecoration: searchBoxDecoration,
