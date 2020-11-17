@@ -44,7 +44,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
   final ValueChanged<String> onFieldSubmitted;
   final String Function(String) validator;
   final Function(String) onSaved;
-
+  final double widthOfSelectorButton;
   final TextEditingController textFieldController;
   final TextInputAction keyboardAction;
 
@@ -80,6 +80,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
     @required this.onInputChanged,
     this.suffixIcon,
     this.onInputValidated,
+    this.widthOfSelectorButton,
     this.onSubmit,
     this.onFieldSubmitted,
     this.validator,
@@ -326,18 +327,22 @@ class _InputWidgetView
           Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              SelectorButton(
-                country: state.country,
-                countries: state.countries,
-                onCountryChanged: state.onCountryChanged,
-                selectorConfig: widget.selectorConfig,
-                selectorTextStyle: widget.selectorTextStyle,
-                searchBoxDecoration: widget.searchBoxDecoration,
-                locale: widget.locale,
-                isEnabled: widget.isEnabled,
-                autoFocusSearchField: widget.autoFocusSearch,
-                isScrollControlled: widget.countrySelectorScrollControlled,
+              SizedBox(
+                width: widget.widthOfSelectorButton,
+                child: SelectorButton(
+                  country: state.country,
+                  countries: state.countries,
+                  onCountryChanged: state.onCountryChanged,
+                  selectorConfig: widget.selectorConfig,
+                  selectorTextStyle: widget.selectorTextStyle,
+                  searchBoxDecoration: widget.searchBoxDecoration,
+                  locale: widget.locale,
+                  isEnabled: widget.isEnabled,
+                  autoFocusSearchField: widget.autoFocusSearch,
+                  isScrollControlled: widget.countrySelectorScrollControlled,
+                ),
               ),
+
               SizedBox(
                 height: state.selectorButtonBottomPadding,
               ),
