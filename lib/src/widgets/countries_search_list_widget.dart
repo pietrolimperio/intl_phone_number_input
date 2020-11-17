@@ -18,7 +18,7 @@ class CountrySearchListWidget extends StatefulWidget {
       this.scrollController,
       this.showFlags,
       this.useEmoji,
-        this.label = "Search by country name or dial code",
+        this.label,
       this.autoFocus = false
 
       });
