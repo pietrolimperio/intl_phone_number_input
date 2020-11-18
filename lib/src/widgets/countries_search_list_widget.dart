@@ -46,7 +46,7 @@ class _CountrySearchListWidgetState extends State<CountrySearchListWidget> {
 
   InputDecoration getSearchBoxDecoration() {
     return widget.searchBoxDecoration ??
-        InputDecoration(labelText: widget.label);
+        InputDecoration(hintText: widget.label);
   }
 
   List<Country> filterCountries() {
