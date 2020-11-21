@@ -162,7 +162,7 @@ class SelectorButton extends StatelessWidget {
                   countries,
                   locale,
                   searchBoxDecoration: searchBoxDecoration,
-                  label: label
+                  label: label,
                   scrollController: controller,
                   showFlags: selectorConfig.showFlags,
                   useEmoji: selectorConfig.useEmoji,
