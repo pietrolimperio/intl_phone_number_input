@@ -134,12 +134,7 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
     initialiseWidget();
     super.initState();
   }
-  
-    @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
+
 
   @override
   void setState(fn) {
